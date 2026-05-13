@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | POLOFITSPORT</title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <img
+                src="img/logo.png"
+                alt="POLOFITSPORT"
+            >
+
+        </div>
+
+        <!-- MENU -->
+        <nav>
+
+            <ul>
+
+                <li class="active">
+
+                    <a href="index.html">
+
+                        📊 Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="inventario.html">
+
+                        📦 Inventario
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="usuarios.html">
+
+                        👥 Usuarios
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="pedidos.html">
+
+                        🛒 Pedidos
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- CERRAR SESION -->
+        <div class="logout">
+
+            <a href="#"
+               onclick="cerrarSesion()">
+
+               🚪 Cerrar sesión
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main">
+
+        <!-- TITULO -->
+        <div class="top-dashboard">
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p class="subtitle">
+
+                    Panel principal del sistema
+
+                </p>
+
+            </div>
+
+            <!-- USUARIO ACTIVO -->
+            <div class="usuario-activo"
+                 id="usuarioActivo">
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CARDS
+        ========================== -->
+
+        <section class="cards">
+
+            <!-- PRODUCTOS -->
+            <div class="card red">
+
+                <div class="card-icon">
+                    📦
+                </div>
+
+                <h3>
+                    Productos
+                </h3>
+
+                <p id="totalProductos">
+                    0
+                </p>
+
+            </div>
+
+            <!-- CATEGORIAS -->
+            <div class="card purple">
+
+                <div class="card-icon">
+                    🏷️
+                </div>
+
+                <h3>
+                    Categorías
+                </h3>
+
+                <p id="totalCategorias">
+                    0
+                </p>
+
+            </div>
+
+            <!-- PEDIDOS -->
+            <div class="card blue">
+
+                <div class="card-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Pedidos
+                </h3>
+
+                <p id="totalPedidos">
+                    0
+                </p>
+
+            </div>
+
+            <!-- VENTAS -->
+            <div class="card green">
+
+                <div class="card-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Ventas
+                </h3>
+
+                <p id="totalVentas">
+                    $0
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESUMEN INVENTARIO
+        ========================== -->
+
+        <section class="resumen-inventario">
+
+            <!-- TITULO -->
+            <div class="titulo-seccion">
+
+                <h2>
+
+                    Productos recientes
+
+                </h2>
+
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="buscador">
+
+                <input
+                    type="text"
+                    id="buscadorProductos"
+                    placeholder="🔍 Buscar producto..."
+                    onkeyup="buscarProductos()"
+                >
+
+            </div>
+
+            <!-- TABLA -->
+            <div class="table-container">
+
+                <div
+                    class="table"
+                    id="tablaResumen">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

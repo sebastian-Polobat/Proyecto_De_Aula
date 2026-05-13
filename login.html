@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | POLOFITSPORT</title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body class="login-body">
+
+    <!-- =========================
+         LOGIN BOX
+    ========================== -->
+
+    <div class="login-box">
+
+        <!-- LOGO -->
+        <div class="logo-login">
+
+            <img
+                src="img/logo.png"
+                alt="POLOFITSPORT"
+            >
+
+        </div>
+
+        <!-- TITULO -->
+        <h2>
+
+            INICIAR SESIÓN
+
+        </h2>
+
+        <p class="login-subtitle">
+
+            Bienvenido al sistema de gestión
+
+        </p>
+
+
+        <!-- =========================
+             FORMULARIO
+        ========================== -->
+
+        <form
+            class="login-form"
+            onsubmit="event.preventDefault(); login();"
+        >
+
+            <!-- CORREO -->
+            <div class="input-group">
+
+                <label>
+
+                    Correo electrónico
+
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="correo@polofit.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONTRASEÑA -->
+            <div class="input-group">
+
+                <label>
+
+                    Contraseña
+
+                </label>
+
+                <input
+                    type="password"
+                    id="clave"
+                    placeholder="Ingrese su contraseña"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BOTON -->
+            <button
+                type="submit"
+                class="btn-login"
+            >
+
+                Ingresar
+
+            </button>
+
+        </form>
+
+
+        <!-- =========================
+             INFO ADMIN
+        ========================== -->
+
+        <div class="login-info">
+
+            <p>
+
+                <strong>Admin por defecto:</strong>
+
+            </p>
+
+            <span>
+
+                admin@polofit.com
+
+            </span>
+
+            <span>
+
+                Contraseña: 12345
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pedidos | POLOFITSPORT</title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <div class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <img
+                src="img/logo.png"
+                alt="POLOFITSPORT"
+            >
+
+        </div>
+
+        <!-- MENU -->
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="inventario.html">
+                    Inventario
+                </a>
+            </li>
+
+            <li>
+                <a href="usuarios.html">
+                    Usuarios
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="pedidos.html">
+                    Pedidos
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- CERRAR SESION -->
+        <div class="logout">
+
+            <a
+                href="javascript:void(0)"
+                onclick="cerrarSesion()"
+            >
+
+                Cerrar sesión
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <div class="main">
+
+        <!-- TITULO -->
+        <h1>
+
+            Pedidos
+
+        </h1>
+
+        <!-- USUARIO ACTIVO -->
+        <div class="usuario-activo"
+             id="usuarioActivo">
+        </div>
+
+        <!-- SUBTITULO -->
+        <p class="subtitle">
+
+            Gestión y control de pedidos
+
+        </p>
+
+
+        <!-- =========================
+             BARRA SUPERIOR
+        ========================== -->
+
+        <div class="barra-superior">
+
+            <button
+                class="btn-agregar"
+                onclick="abrirModalPedido()"
+            >
+
+                + Nuevo Pedido
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             BUSCADOR
+        ========================== -->
+
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscadorPedidos"
+                placeholder="Buscar pedido..."
+                onkeyup="buscarPedidos()"
+            >
+
+        </div>
+
+
+        <!-- =========================
+             TABLA
+        ========================== -->
+
+        <div
+            class="table"
+            id="tablaPedidos"
+        >
+
+            <div class="row header">
+
+                <span>Cliente</span>
+
+                <span>Producto</span>
+
+                <span>Cantidad</span>
+
+                <span>Total</span>
+
+                <span>Acción</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL PEDIDO
+    ========================== -->
+
+    <div
+        class="modal"
+        id="modalPedido"
+    >
+
+        <div class="panel-producto">
+
+            <!-- TITULO -->
+            <h1 id="tituloPedido">
+
+                NUEVO PEDIDO
+
+            </h1>
+
+
+            <!-- CLIENTE -->
+            <label>
+
+                Cliente
+
+            </label>
+
+            <input
+                type="text"
+                id="clientePedido"
+                placeholder="Nombre del cliente"
+            >
+
+
+            <!-- PRODUCTO -->
+            <label>
+
+                Producto
+
+            </label>
+
+            <select
+                id="productoPedido"
+                onchange="calcularTotalPedido()"
+            >
+
+                <option>
+
+                    Cargando productos...
+
+                </option>
+
+            </select>
+
+
+            <!-- CANTIDAD -->
+            <label>
+
+                Cantidad
+
+            </label>
+
+            <input
+                type="number"
+                id="cantidadPedido"
+                placeholder="Cantidad"
+                oninput="calcularTotalPedido()"
+            >
+
+
+            <!-- TOTAL -->
+            <label>
+
+                Total
+
+            </label>
+
+            <input
+                type="number"
+                id="totalPedido"
+                placeholder="Total"
+                readonly
+            >
+
+
+            <!-- BOTONES -->
+            <div class="acciones-modal">
+
+                <button
+                    class="btn-guardar"
+                    onclick="guardarPedido()"
+                >
+
+                    GUARDAR PEDIDO
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

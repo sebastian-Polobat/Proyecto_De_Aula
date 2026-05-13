@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Inventario | POLOFITSPORT</title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <img
+                src="img/logo.png"
+                alt="POLOFITSPORT"
+            >
+
+        </div>
+
+        <!-- MENU -->
+        <nav>
+
+            <ul>
+
+                <li>
+
+                    <a href="index.html">
+
+                        📊 Dashboard
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="inventario.html">
+
+                        📦 Inventario
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="usuarios.html">
+
+                        👥 Usuarios
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="pedidos.html">
+
+                        🛒 Pedidos
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- CERRAR SESION -->
+        <div class="logout">
+
+            <a href="#"
+               onclick="cerrarSesion()">
+
+                🚪 Cerrar sesión
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main">
+
+        <!-- TITULO -->
+        <div class="top-dashboard">
+
+            <div>
+
+                <h1>
+
+                    Inventario
+
+                </h1>
+
+                <p class="subtitle">
+
+                    Gestión completa de productos
+
+                </p>
+
+            </div>
+
+            <!-- USUARIO ACTIVO -->
+            <div class="usuario-activo"
+                 id="usuarioActivo">
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             BARRA SUPERIOR
+        ========================== -->
+
+        <div class="barra-superior">
+
+            <!-- BUSCADOR -->
+            <div class="buscador buscador-inventario">
+
+                <input
+                    type="text"
+                    id="buscadorInventario"
+                    placeholder="🔍 Buscar producto..."
+                    onkeyup="buscarProductos()"
+                >
+
+            </div>
+
+            <!-- BOTON -->
+            <button
+                class="btn-agregar"
+                onclick="abrirModalProducto()"
+            >
+
+                + Nuevo Producto
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             TABLA INVENTARIO
+        ========================== -->
+
+        <section class="inventario-section">
+
+            <div class="table-container">
+
+                <div
+                    class="table"
+                    id="tablaInventario">
+
+                    <!-- CONTENIDO DINAMICO -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL PRODUCTO
+    ========================== -->
+
+    <div class="modal"
+         id="modalProducto">
+
+        <div class="panel-producto">
+
+            <!-- TITULO -->
+            <h1 id="tituloModal">
+
+                NUEVO PRODUCTO
+
+            </h1>
+
+            <!-- FORMULARIO -->
+            <div class="form-grid">
+
+                <!-- NOMBRE -->
+                <div class="input-group">
+
+                    <label>
+
+                        Nombre del producto
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreProducto"
+                        placeholder="Ej: Camiseta deportiva"
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+                <div class="input-group">
+
+                    <label>
+
+                        Categoría
+
+                    </label>
+
+                    <select id="categoriaProducto">
+
+                        <option>
+                            Seleccione Categoria
+                        </option>
+
+                        <option>
+                            Camisas
+                        </option>
+
+                        <option>
+                            Pantalones
+                        </option>
+
+                        <option>
+                            Calzado
+                        </option>
+
+                        <option>
+                            Accesorios
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRECIO -->
+                <div class="input-group">
+
+                    <label>
+
+                        Precio
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="precioProducto"
+                        placeholder="$ Precio"
+                    >
+
+                </div>
+
+
+                <!-- STOCK -->
+                <div class="input-group">
+
+                    <label>
+
+                        Stock
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="stockProducto"
+                        placeholder="Cantidad disponible"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="acciones-modal">
+
+                <!-- CANCELAR -->
+                <button
+                    class="btn-cancelar"
+                    onclick="cerrarModal('modalProducto')"
+                >
+
+                    Cancelar
+
+                </button>
+
+                <!-- GUARDAR -->
+                <button
+                    class="btn-guardar"
+                    onclick="guardarProducto()"
+                >
+
+                    Guardar Producto
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html> 

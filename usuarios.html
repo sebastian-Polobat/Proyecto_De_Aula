@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Usuarios | POLOFITSPORT
+    </title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <div class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <img
+                src="img/logo.png"
+                alt="POLOFITSPORT"
+            >
+
+        </div>
+
+
+        <!-- MENU -->
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="inventario.html">
+                    Inventario
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="usuarios.html">
+                    Usuarios
+                </a>
+            </li>
+
+            <li>
+                <a href="pedidos.html">
+                    Pedidos
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- CERRAR SESION -->
+        <div class="logout">
+
+            <a
+                href="javascript:void(0)"
+                onclick="cerrarSesion()"
+            >
+
+                Cerrar sesión
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <div class="main">
+
+        <!-- TITULO -->
+        <h1>
+
+            Usuarios
+
+        </h1>
+
+
+        <!-- USUARIO ACTIVO -->
+        <div class="usuario-activo"
+             id="usuarioActivo">
+        </div>
+
+
+        <!-- SUBTITULO -->
+        <p class="subtitle">
+
+            Gestión de usuarios del sistema
+
+        </p>
+
+
+        <!-- =========================
+             BARRA SUPERIOR
+        ========================== -->
+
+        <div class="barra-superior">
+
+            <button
+                class="btn-agregar"
+                onclick="abrirModalUsuario()"
+            >
+
+                + Nuevo Usuario
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             BUSCADOR
+        ========================== -->
+
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscadorUsuarios"
+                placeholder="Buscar usuario..."
+                onkeyup="buscarUsuarios()"
+            >
+
+        </div>
+
+
+        <!-- =========================
+             TABLA
+        ========================== -->
+
+        <div
+            class="table"
+            id="tablaUsuarios"
+        >
+
+            <div class="row header">
+
+                <span>Nombre</span>
+
+                <span>Correo</span>
+
+                <span>Rol</span>
+
+                <span>Acción</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL USUARIO
+    ========================== -->
+
+    <div
+        class="modal"
+        id="modalUsuario"
+    >
+
+        <div class="panel-producto">
+
+            <!-- TITULO -->
+            <h1 id="tituloModalUsuario">
+
+                NUEVO USUARIO
+
+            </h1>
+
+
+            <!-- NOMBRE -->
+            <label>
+
+                Nombre Completo
+
+            </label>
+
+            <input
+                type="text"
+                id="nombreUsuario"
+                placeholder="Nombre completo"
+            >
+
+
+            <!-- CORREO -->
+            <label>
+
+                Correo Electrónico
+
+            </label>
+
+            <input
+                type="email"
+                id="correoUsuario"
+                placeholder="correo@ejemplo.com"
+            >
+
+
+            <!-- CLAVE -->
+            <label>
+
+                Contraseña
+
+            </label>
+
+            <input
+                type="password"
+                id="claveUsuario"
+                placeholder="********"
+            >
+
+
+            <!-- ROL -->
+            <label>
+
+                Rol
+
+            </label>
+
+            <select id="rolUsuario">
+
+                <option>
+
+                    Seleccione Rol
+
+                </option>
+
+                <option>
+
+                    Admin
+
+                </option>
+
+                <option>
+
+                    Vendedor
+
+                </option>
+
+                <option>
+
+                    Bodega
+
+                </option>
+
+            </select>
+
+
+            <!-- BOTON -->
+            <div class="acciones-modal">
+
+                <button
+                    class="btn-guardar"
+                    onclick="guardarUsuario()"
+                >
+
+                    GUARDAR USUARIO
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
